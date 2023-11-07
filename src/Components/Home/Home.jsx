@@ -18,7 +18,7 @@ const Home = () => {
     <div className="home flex container">
       <div className="mainText">
         <h1 data-aos="fade-up" data-aos-duration="2500">
-          Create Ever-lasting Memories With Us
+          Crea recuerdos eternos con nosotros
         </h1>
       </div>
 

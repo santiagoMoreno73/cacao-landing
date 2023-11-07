@@ -57,7 +57,7 @@ const Travelers = () => {
     <div className="travelers container section">
       <div className="sectionContainer">
         <h2 data-aos="fade-down" data-aos-duration="2500">
-          Top travelers of this month!
+          Top clientes en este mes!
         </h2>
 
         <div

@@ -6,9 +6,16 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import { BiSolidCoffeeBean } from "react-icons/bi";
 
+import Modal from "../Modal/Modal";
+import Login from "../Login/Login";
+
 const Navbar = () => {
   // let us remove the navBar in the small width screens
   const [active, setActive] = useState("navBarMenu");
+  // let us add a background color to the second Navbar
+  const [noBg, addBg] = useState("navBarTwo");
+  // open modal
+  const [openModal, setOpenModal] = useState(false);
 
   const showNavBar = () => {
     setActive("navBarMenu showNavBar");
@@ -17,9 +24,6 @@ const Navbar = () => {
   const removeNavBar = () => {
     setActive("navBarMenu");
   };
-
-  // let us add a background color to the second Navbar
-  const [noBg, addBg] = useState("navBarTwo");
 
   const addBgColor = () => {
     if (window.scrollY >= 10) {
@@ -30,6 +34,10 @@ const Navbar = () => {
   };
 
   window.addEventListener("scroll", addBgColor);
+
+  const handleChangeModal = () => {
+    setOpenModal(!openModal);
+  };
 
   return (
     <div className="navBar flex">
@@ -47,7 +55,7 @@ const Navbar = () => {
         </div>
 
         <div className="atb flex">
-          <span>Sign In</span>
+          <span onClick={handleChangeModal}>Sign In</span>
           <span>Sign Out</span>
         </div>
       </div>
@@ -87,6 +95,10 @@ const Navbar = () => {
           <CgMenuGridO className="icon" />
         </div>
       </div>
+
+      <Modal open={openModal} onClose={setOpenModal} title={"Login"}>
+        <Login />
+      </Modal>
     </div>
   );
 };

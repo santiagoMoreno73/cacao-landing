@@ -19,6 +19,7 @@
   --whiteColorDeam: hsl(0, 0%, 93%);
   --greyBg: hsl(0, 0%, 96%);
   --greyText: hsl(145, 145, 145);
+  --overlayBg: rgba(0,0,0, .5);
   --inputColor: hsl(330, 12%, 97%);
   --boxShadow: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05)
   0px 4px 6px -2px;
@@ -109,6 +110,109 @@ h2 {
   font-size: 25px;
   padding: 1rem 0;
   color: var(--blackColor);
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--overlayBg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .sectionContainer {
+  width: 500px;
+  min-height: 100px;
+  position: relative;
+  border-radius: 5px;
+  background: var(--whiteColor);
+  box-shadow: var(--boxShadow);
+  padding: 20px;
+}
+.modal .sectionHead {
+  display: flex;
+  align-items: center;
+  margin-bottom: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--PrimaryColor);
+}
+.modal .sectionHead h3 {
+  font-weight: 500;
+  font-size: 25px;
+  color: var(--PrimaryColor);
+}
+.modal .btnClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  border-radius: 50%;
+  color: var(--colorOne);
+}
+.modal .btnClose svg {
+  width: 30px;
+  height: 30px;
+}
+.modal .btnClose:hover {
+  background: var(--greyBg);
+}
+.modal .sectionBody {
+  display: flex;
+  align-items: center;
+}
+.modal .buttonsDiv {
+  display: flex;
+  justify-content: end;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.modal .buttonsDiv .btn {
+  width: 100%;
+}
+.modal .registerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .registerDiv a {
+  margin-left: 5px;
+}
+
+.login {
+  margin: 20px;
+  width: 100%;
+  height: auto;
+}
+.login .inputDiv {
+  margin: 15px 0px;
+}
+.login .inputDiv label {
+  display: block;
+  font-size: 16px;
+  margin: 8px 0px;
+}
+.login .inputDiv input {
+  width: 95%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.login .inputDiv input::-moz-placeholder {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.login .inputDiv input::placeholder {
+  font-size: 12px;
+  opacity: 0.5;
 }
 
 .navBar {

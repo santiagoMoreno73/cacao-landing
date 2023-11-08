@@ -21,6 +21,7 @@
     --whiteColorDeam: hsl(0, 0%, 93%);
     --greyBg: hsl(0, 0%, 96%);
     --greyText: hsl(145, 145, 145);
+    --overlayBg: rgba(0,0,0, .5);
     --inputColor: hsl(330, 12%, 97%);
     --boxShadow: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05)
     0px 4px 6px -2px;
@@ -115,6 +116,126 @@ h2 {
     font-size: 25px;
     padding: 1rem 0;
     color: var(--blackColor)
+}
+
+// modal 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--overlayBg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal {
+    .sectionContainer {
+        width: 500px;
+        min-height: 100px;
+        position: relative;
+        border-radius: 5px;
+        background: var(--whiteColor);
+        box-shadow: var(--boxShadow);
+        padding: 20px;
+    }
+
+    .sectionHead {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        margin-bottom: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--PrimaryColor);
+
+        h3 {
+            font-weight: 500;
+            font-size: 25px;
+            color: var(--PrimaryColor);
+        }
+    }
+
+    .btnClose {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: .3s ease all;
+        border-radius: 50%;
+        color: var(--colorOne);
+
+        svg {
+            width: 30px;
+            height: 30px; 
+        }
+
+        &:hover {
+            background: var(--greyBg);
+        }
+    }
+
+    .sectionBody {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+    }
+
+    .buttonsDiv {
+        display: flex;
+        justify-content: end;
+        margin-top: 40px;
+        margin-bottom: 12px;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .registerDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            margin-left: 5px;
+        }
+    }
+}
+
+// logion section
+.login {
+    margin: 20px;
+    width: 100%;
+    height: auto;
+
+    .inputDiv {
+        margin: 15px 0px;
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin: 8px 0px;
+        }
+
+        input {
+            width: 95%;
+            border: none;
+            outline: none;
+            background: transparent; 
+
+            &::placeholder {
+                font-size: 12px;
+                opacity: .5;
+            }
+        }
+    }
 }
 
 // navBar section

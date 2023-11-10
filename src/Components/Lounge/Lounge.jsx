@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import coffee_home from "../../assets/coffee_home.jpg";
+import coffee_home from "../../assets/coffee_home.jpeg";
 
 // import AOS
 import Aos from "aos";
@@ -15,7 +15,7 @@ const Lounge = () => {
   return (
     <div className="lounge container section">
       <div className="sectionContainer grid">
-        <div data-aos="fade-left" data-aos-duration="2500" className="imgDiv">
+        <div data-aos="fade-down" data-aos-duration="2500" className="imgDiv">
           <img src={coffee_home} alt="photo coffee" />
         </div>
 

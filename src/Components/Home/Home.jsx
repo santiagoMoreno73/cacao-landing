@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 // import assets
 import video from "../../assets/video.mp4";
-// import airplane from "../../assets/airplane.png";
+import icon_cacao from "../../assets/icon_cacao.png";
 
 // import AOS
 import Aos from "aos";
@@ -31,7 +31,7 @@ const Home = () => {
           <video src={video} autoPlay muted loop className="video"></video>
         </div>
 
-        {/* <img src={airplane} alt="airplane" className="plane" /> */}
+        <img src={icon_cacao} alt="icon cacao" className="plane" />
       </div>
     </div>
   );

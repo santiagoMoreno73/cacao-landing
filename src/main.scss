@@ -9,11 +9,11 @@
 }
 
 :root {
-    --PrimaryColor: hsl(255, 50%, 48%);
+    --PrimaryColor: hsl(155, 50%, 40%);
     --SecondaryColor: hsl(180, 17%, 95%);
     --colorOne: hsl(15, 74%, 70%);
     --colorTwo: hsl(28, 100%, 82%);
-    --HoverColor: hsl(255, 56%, 59%);
+    --HoverColor: hsl(153, 46%, 31%);
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 12%);
     --textColor: hsl(240, 1%, 48%);
@@ -284,7 +284,7 @@ h2 {
 
         .logoDiv {
             .logo {
-                width: 20%;
+                width: 15%;
             }
         }
 
@@ -387,8 +387,7 @@ h2 {
 
         .plane {
             position: absolute;
-            width: 100%;
-            top: -10%;
+            width: 70%;
         }
     }
 }
@@ -436,7 +435,7 @@ h2 {
         .searchInputs {
             width: 100%;
             justify-content: center;
-            flex-direction: column;
+            // flex-direction: column;
             gap: 1.5rem;
 
             .singleInput {
@@ -858,8 +857,8 @@ h2 {
     .search {
         .sectionContainer {
             .searchInputs {
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
+                display: flex;
+                // grid-template-columns: repeat(2,1fr);
             }
         }   
     }
@@ -916,8 +915,7 @@ h2 {
 
             .plane {
                 position: absolute;
-                width: 95%;
-                top: -8%;
+                width: 70%;
             }
         }
     }
@@ -1014,9 +1012,7 @@ h2 {
                 }
 
                 .plane {
-                    width: 95%;
-                    top: -8%;
-
+                    width: 70%;
                 }
             }
         }
@@ -1030,9 +1026,9 @@ h2 {
                 flex-direction: row;
             }
 
-            .searchInputs {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            // .searchInputs {
+            //     grid-template-columns: repeat(3, 1fr);
+            // }
         }   
     }
 
@@ -1110,7 +1106,7 @@ h2 {
             }
 
             .searchInputs {
-                grid-template-columns: repeat(4, 1fr);
+                // grid-template-columns: repeat(4, 1fr);
 
                 .singleInput {
                     .texts {
@@ -1200,9 +1196,12 @@ h2 {
     // search section styling
     .search {
         .sectionContainer {
-            .searchInputs {
-                grid-template-columns: repeat(5, 1fr);
-            }
+            display: flex;
+            justify-content: center;
+
+            // .searchInputs {
+            //     grid-template-columns: repeat(5, 1fr);
+            // }
         }   
     }
     
@@ -1272,8 +1271,7 @@ h2 {
             }
 
             .plane {
-                width: 100%;
-                top: -10%;
+                width: 25%;
             }
         }
     }
@@ -1281,6 +1279,7 @@ h2 {
     // search section styling
     .search {
         .sectionContainer {
+            
             .btns {
                 width: 50%;
             }
@@ -1342,8 +1341,7 @@ h2 {
     .home {
         .homeImages {
             .plane {
-                width: 70%;
-                top: -30%;
+                width: 25%;
             }
         }  
     }

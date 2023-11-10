@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import coffee_info from "../../assets/coffee_info.jpg";
+import coffee_info from "../../assets/coffee_info.jpeg";
 
 // import AOS
 import Aos from "aos";
@@ -72,7 +72,7 @@ const Support = () => {
             </div>
           </div>
 
-          <div data-aos="fade-left" data-aos-duration="2500" className="imgDiv">
+          <div data-aos="fade-up" data-aos-duration="2500" className="imgDiv">
             <img src={coffee_info} alt="photo coffee" />
           </div>
         </div>

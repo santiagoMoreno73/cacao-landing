@@ -1,26 +1,28 @@
-import Footer from "./Components/Footer/Footer";
-import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
-import Search from "./Components/Search/Search";
-import Support from "./Components/Support/Support";
-import Travelers from "./Components/Travelers/Travelers";
+import CheckoutPage from "./pages/CheckoutPage";
+import ProductsPage from "./pages/ProductsPage";
+import HomePage from "./pages/homePage";
+import Footer from "./Components/Footer/Footer";
 import Subscribers from "./Components/Subscribers/Subscribers";
-import Info from "./Components/Info/Info";
-import Lounge from "./Components/Lounge/Lounge";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Navbar />
-      <Home />
-      <Search />
-      <Support />
-      <Info />
-      <Lounge />
-      <Travelers />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+      </BrowserRouter>
       <Subscribers />
       <Footer />
-    </div>
+    </Provider>
   );
 };
 

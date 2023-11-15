@@ -69,7 +69,13 @@ const Register = ({ handleRegister }) => {
 
   const validateAll = () => {
     const { name, email, user, address, password } = formState.values;
-    const validations = { name, email, user, address, password };
+    const validations = {
+      name: "",
+      email: "",
+      user: "",
+      address: "",
+      password: "",
+    };
     let isValid = true;
 
     if (!name) {

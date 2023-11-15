@@ -1,15 +1,32 @@
 import { useState } from "react";
-
+// icons
 import { SiConsul } from "react-icons/si";
 import { BsPhoneVibrate } from "react-icons/bs";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import { BiSolidCoffeeBean } from "react-icons/bi";
-
+import { RxAvatar } from "react-icons/rx";
+// icons
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { GoSignOut } from "react-icons/go";
+// components
 import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
+// redux
+import { useSelector } from "react-redux";
+
+const optionsNav = [
+  { title: "Inicio", path: "/" },
+  { title: "Acerca de", path: "#support" },
+  { title: "Info", path: "#info" },
+  { title: "Lounge", path: "#lounge" },
+  { title: "Suscríbete", path: "#subscribers" },
+  { title: "Productos", path: "/products" },
+];
 
 const Navbar = () => {
+  const { user } = useSelector((state) => state.user);
+  const { totalQuantity } = useSelector((state) => state.cart);
   // let us remove the navBar in the small width screens
   const [active, setActive] = useState("navBarMenu");
   // let us add a background color to the second Navbar
@@ -19,10 +36,6 @@ const Navbar = () => {
 
   const showNavBar = () => {
     setActive("navBarMenu showNavBar");
-  };
-
-  const removeNavBar = () => {
-    setActive("navBarMenu");
   };
 
   const addBgColor = () => {
@@ -39,6 +52,8 @@ const Navbar = () => {
     setOpenModal(!openModal);
   };
 
+  const handleCloseSession = () => {};
+
   return (
     <div className="navBar flex">
       <div className="navBarOne flex">
@@ -47,16 +62,39 @@ const Navbar = () => {
         </div>
         <div className="none flex">
           <li className="flex">
-            <BsPhoneVibrate className="icon" /> Support
+            <BsPhoneVibrate className="icon" /> Soporte
           </li>
           <li className="flex">
-            <AiOutlineGlobal className="icon" /> Languages
+            <AiOutlineGlobal className="icon" /> Idiomas
           </li>
         </div>
 
         <div className="atb flex">
-          <span onClick={handleChangeModal}>Sign In</span>
-          <span>Sign Out</span>
+          <div className="divShopping">
+            <a className="btn-shopping" href="/checkout">
+              <AiOutlineShoppingCart className="icon" />
+            </a>
+            <div className="numItems">
+              <b>{totalQuantity}</b>
+            </div>
+          </div>
+
+          {!Object.entries(user).length ? (
+            <span onClick={handleChangeModal}>Sign In</span>
+          ) : (
+            <>
+              <div className="avatarContainer">
+                <div className="avatarImg">
+                  <RxAvatar />
+                </div>
+                {/* <p>{user.name}</p> */}
+              </div>
+
+              <span onClick={handleCloseSession}>
+                <GoSignOut />
+              </span>
+            </>
+          )}
         </div>
       </div>
       <div className={noBg}>
@@ -67,26 +105,18 @@ const Navbar = () => {
 
         <div className={active}>
           <ul className="menu flex">
-            <li className="listItem" onClick={removeNavBar}>
-              Home
-            </li>
-            <li className="listItem" onClick={removeNavBar}>
-              About
-            </li>
-            <li className="listItem" onClick={removeNavBar}>
-              Offers
-            </li>
-            <li className="listItem" onClick={removeNavBar}>
-              Seats
-            </li>
-            <li className="listItem" onClick={removeNavBar}>
-              Destinations
-            </li>
+            {optionsNav.map((item, index) => {
+              return (
+                <li key={index}>
+                  <a className="listItem" href={item.path}>
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
-          <button className="btn flex btnOne" onClick={removeNavBar}>
-            Contact
-          </button>
+          <button className="btn flex btnOne">Contact</button>
         </div>
 
         <button className="btn flex btnTwo">Contact</button>

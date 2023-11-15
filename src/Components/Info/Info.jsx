@@ -14,15 +14,15 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="info section">
+    <div id="info" className="info section">
       <div className="infoContainer container">
         <div className="titleDiv flex">
           <h2 data-aos="fade-right" data-aos-duration="2500">
-            Travel to make memories all around the world
+            Productos mucho cacao
           </h2>
 
           <button data-aos="fade-up" data-aos-duration="2500" className="btn">
-            View All
+            Ver todo
           </button>
         </div>
 
@@ -36,11 +36,8 @@ const Info = () => {
               <RxCalendar className="icon" />
             </div>
 
-            <span className="cardTitle">Book & Relax</span>
-            <p>
-              You can also call airlines from your phone and book a flight
-              ticket!
-            </p>
+            <span className="cardTitle">Procesamos</span>
+            <p>Procesamos el cacao de forma artesanal</p>
           </div>
 
           <div
@@ -52,11 +49,8 @@ const Info = () => {
               <BsShieldCheck className="icon" />
             </div>
 
-            <span className="cardTitle">Smart Checklist</span>
-            <p>
-              You can also call airlines from your phone and book a flight
-              ticket!
-            </p>
+            <span className="cardTitle">Natural</span>
+            <p>Nuestros productos son 100% naturales</p>
           </div>
 
           <div
@@ -68,11 +62,8 @@ const Info = () => {
               <BsBookmarkCheck className="icon" />
             </div>
 
-            <span className="cardTitle">Save More</span>
-            <p>
-              You can also call airlines from your phone and book a flight
-              ticket!
-            </p>
+            <span className="cardTitle">Calidad</span>
+            <p>Incorporamos técnicas para traer el mejor café a tu hogar</p>
           </div>
         </div>
       </div>

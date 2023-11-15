@@ -13,7 +13,7 @@ const Lounge = () => {
   }, []);
 
   return (
-    <div className="lounge container section">
+    <div id="lounge" className="lounge container section">
       <div className="sectionContainer grid">
         <div data-aos="fade-down" data-aos-duration="2500" className="imgDiv">
           <img src={coffee_home} alt="photo coffee" />
@@ -21,7 +21,7 @@ const Lounge = () => {
 
         <div className="textDiv">
           <h2 data-aos="fade-down" data-aos-duration="2500">
-            Unaccompanied Minor Lounge
+            Mucho cacao
           </h2>
 
           <div className="grids grid">
@@ -30,10 +30,9 @@ const Lounge = () => {
               data-aos-duration="2500"
               className="singleGrid"
             >
-              <span className="gridTitle">Help through the airport</span>
+              <span className="gridTitle">Aromas del Campo en Tu Hogar</span>
               <p>
-                You can also call airlines from your phone and book a flight
-                ticket to one of your favorite destinations.
+                Llegar a los hogares del pais con lo mejores aromas del campo
               </p>
             </div>
 
@@ -42,10 +41,10 @@ const Lounge = () => {
               data-aos-duration="2500"
               className="singleGrid"
             >
-              <span className="gridTitle">Priority Boarding</span>
+              <span className="gridTitle">Sabor y Sostenibilidad</span>
               <p>
-                You can also call airlines from your phone and book a flight
-                ticket to one of your favorite destinations.
+                Reconocemos el trabajo de nuestros campesinos, brindando mejores
+                oportunidades laborales
               </p>
             </div>
 
@@ -54,11 +53,8 @@ const Lounge = () => {
               data-aos-duration="2500"
               className="singleGrid"
             >
-              <span className="gridTitle">Care on the flight</span>
-              <p>
-                You can also call airlines from your phone and book a flight
-                ticket to one of your favorite destinations.
-              </p>
+              <span className="gridTitle">Cosecha con Propósito</span>
+              <p>Transformamos granos en experiencias únicas</p>
             </div>
 
             <div
@@ -66,11 +62,8 @@ const Lounge = () => {
               data-aos-duration="2500"
               className="singleGrid"
             >
-              <span className="gridTitle">Chauffeur-drive service</span>
-              <p>
-                You can also call airlines from your phone and book a flight
-                ticket to one of your favorite destinations.
-              </p>
+              <span className="gridTitle">Santander en Cada Taza</span>
+              <p>Cultivando tradiciones, celebrando calidad</p>
             </div>
           </div>
         </div>

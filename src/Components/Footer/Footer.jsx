@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { TiSocialFacebook } from "react-icons/ti";
-import { AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
+import { AiOutlineInstagram, AiFillYoutube } from "react-icons/ai";
 import { FaPinterestP } from "react-icons/fa";
 
 // icon
@@ -10,6 +10,29 @@ import icon_cacao from "../../assets/icon_cacao.png";
 // import AOS
 import Aos from "aos";
 import "aos/dist/aos.css";
+
+const socialNetworks = [
+  {
+    title: "Facebook",
+    path: "https://www.facebook.com/profile.php?id=100071292084327&mibextid=ZbWKwL",
+    icon: <TiSocialFacebook className="icon" />,
+  },
+  {
+    title: "Instagram",
+    path: "https://www.instagram.com/mucho_cacaoo/?igshid=MWs2aTlkOGtlc2ljbA%3D%3D",
+    icon: <AiOutlineInstagram className="icon" />,
+  },
+  {
+    title: "Youtube",
+    path: "/",
+    icon: <AiFillYoutube className="icon" />,
+  },
+  {
+    title: "Pinterest",
+    path: "/",
+    icon: <FaPinterestP className="icon" />,
+  },
+];
 
 const Footer = () => {
   // useEffect to set animation duration
@@ -20,95 +43,83 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="sectionContainer container grid">
-        <div data-aos="fade-up" data-aos-duration="2500" className="gridOne">
+        <div className="gridOne">
           <div className="logoDiv">
             <img src={icon_cacao} alt="icon" className="Logo" />
             {/* <BiSolidCoffeeBean /> */}
           </div>
-          <p>Your mind should be stronger than your feelings, fly!</p>
+          <p>Tu mente debe ser más fuerte que tus sentimientos, ¡vuela!</p>
           <div className="socialIcon flex">
-            <TiSocialFacebook className="icon" />
-            <AiOutlineTwitter className="icon" />
-            <AiFillYoutube className="icon" />
-            <FaPinterestP className="icon" />
+            {socialNetworks.map(({ path, icon }, index) => {
+              return (
+                <a key={index} href={path}>
+                  {icon}
+                </a>
+              );
+            })}
           </div>
         </div>
 
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          className="footerLinks"
-        >
-          <span className="linkTitle">Information</span>
+        <div className="footerLinks">
+          <span className="linkTitle">Información</span>
           <li>
-            <a href="#">Home</a>
+            <a href="/">Inicio</a>
           </li>
           <li>
-            <a href="#">Explore</a>
+            <a href="#">Explora</a>
           </li>
           <li>
-            <a href="#">Flight Status</a>
+            <a href="#">Beneficios</a>
           </li>
           <li>
-            <a href="#">Travel</a>
+            <a href="#">Experiencias</a>
           </li>
           <li>
-            <a href="#">Check-In</a>
+            <a href="#">Blog</a>
           </li>
           <li>
-            <a href="#">Manage your booking</a>
+            <a href="#">Contacto</a>
           </li>
         </div>
 
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          className="footerLinks"
-        >
-          <span className="linkTitle">Quick Guide</span>
+        <div className="footerLinks">
+          <span className="linkTitle">Guía rápida</span>
           <li>
             <a href="#">FAQ</a>
           </li>
           <li>
-            <a href="#">How to</a>
+            <a href="#">Experiencias</a>
           </li>
           <li>
-            <a href="#">Features</a>
+            <a href="#">Condiciones</a>
           </li>
           <li>
-            <a href="#">Baggage</a>
+            <a href="#">Servicio</a>
           </li>
           <li>
             <a href="#">Route Map</a>
           </li>
           <li>
-            <a href="#">Our communities</a>
+            <a href="#">Comunidad</a>
           </li>
         </div>
 
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          className="footerLinks"
-        >
-          <span className="linkTitle">Information</span>
+        <div className="footerLinks">
+          <span className="linkTitle">Información</span>
           <li>
-            <a href="#">Chauffuer</a>
+            <a href="#">Historia</a>
           </li>
           <li>
-            <a href="#">Our partners</a>
+            <a href="#">Partners</a>
           </li>
           <li>
-            <a href="#">Destination</a>
+            <a href="#">Carreras</a>
           </li>
           <li>
-            <a href="#">Carrers</a>
+            <a href="#">Transporte</a>
           </li>
           <li>
-            <a href="#">Transportation</a>
-          </li>
-          <li>
-            <a href="#">Programme Rules</a>
+            <a href="#">Reglas</a>
           </li>
         </div>
       </div>

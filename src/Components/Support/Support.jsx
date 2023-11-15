@@ -13,7 +13,7 @@ const Support = () => {
   }, []);
 
   return (
-    <div className="support container section">
+    <div id="support" className="support container section">
       <div className="sectionContainer">
         <div className="titlesDiv">
           <small>Soporte</small>

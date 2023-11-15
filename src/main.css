@@ -32,6 +32,7 @@ body {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -90,6 +91,39 @@ li {
 }
 .btn:hover {
   background: var(--HoverColor);
+}
+
+.table {
+  width: 100%;
+  border: 1px solid var(--borderColor);
+  border-radius: 12px;
+}
+.table .tableHead {
+  width: 100%;
+  height: 15px;
+  background: var(--greyBg);
+  padding: 18px 0;
+}
+.table .tableHead th {
+  height: 40px;
+}
+.table .tableRow {
+  display: flex;
+  width: 100%;
+  padding: 18px 0;
+}
+.table .tableRow:nth-of-type(odd) {
+  background: var(--greyBg);
+}
+.table .img {
+  margin: 2px;
+  width: 7rem;
+  height: 7rem;
+}
+.table .divQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 img, video {
@@ -153,6 +187,9 @@ h2 {
   font-size: 25px;
   color: var(--PrimaryColor);
 }
+.modal .divSaleSuccess {
+  margin: 20px 0px;
+}
 .modal .btnClose {
   position: absolute;
   top: 20px;
@@ -195,6 +232,84 @@ h2 {
   margin-left: 5px;
 }
 
+.checkout .titleDiv {
+  padding-top: 5rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.checkout .sectionContainer {
+  text-align: center;
+}
+.checkout .sectionContainer .checkoutContainer {
+  text-align: center;
+  margin-top: 3rem;
+}
+.checkout .sectionContainer .checkoutContainer .divNoItems {
+  display: flex;
+}
+.checkout .sectionContainer .checkoutContainer .divAmount {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.checkout .sectionContainer .checkoutContainer .divAmount h3 {
+  margin-right: 20px;
+}
+
+.products .titleDiv {
+  padding-top: 5rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.products .sectionContainer {
+  text-align: center;
+}
+.products .sectionContainer .productsContainer {
+  text-align: center;
+  gap: 1.5rem;
+}
+.products .sectionContainer .productsContainer .divNoItems {
+  display: flex;
+}
+.products .sectionContainer .productsContainer .productCard {
+  box-shadow: 1px 5px 15px #CCC;
+  width: 15rem;
+  height: auto;
+  border-radius: 3px;
+  padding: 2rem;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  flex: auto;
+  background: linear-gradient(-45deg, var(--PrimaryColor) 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.products .sectionContainer .productsContainer .productCard .img {
+  max-width: 100%;
+  height: 80%;
+  text-align: center;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products .sectionContainer .productsContainer .productCard p {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.products .sectionContainer .productsContainer .productCard button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.products .sectionContainer .productsContainer .productCard button:hover {
+  background: var(--whiteColor);
+  color: var(--blackColor);
+}
+
 .login {
   margin: 20px;
   width: 100%;
@@ -228,6 +343,59 @@ h2 {
   flex-direction: column;
   width: 100%;
   z-index: 1000;
+}
+.navBar .divShopping {
+  position: relative;
+  display: flex;
+  width: 3rem;
+  height: auto;
+}
+.navBar .divShopping .btn-shopping {
+  width: 3rem;
+  padding: 4px;
+  background: var(--greyBg);
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.navBar .divShopping .btn-shopping .icon {
+  color: var(--blackColor);
+}
+.navBar .divShopping .numItems {
+  position: absolute;
+  right: 0;
+  top: -6px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 40%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--colorError);
+  color: var(--whiteColor);
+}
+.navBar .avatarContainer {
+  width: auto;
+  height: 2rem;
+  background: var(--whiteColor);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px;
+}
+.navBar .avatarContainer .avatarImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--greyBg);
+  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 4px;
 }
 .navBar .navBarOne, .navBar .navBarTwo {
   justify-content: space-between;
@@ -676,7 +844,7 @@ h2 {
   border: 1px solid var(--borderColor);
   box-shadow: var(--boxShadow);
   padding: 0.4rem;
-  color: var(--greyText);
+  color: var(--blackColor);
 }
 .footer .sectionContainer .gridOne .socialIcon .icon:hover {
   background: var(--PrimaryColor);
@@ -909,6 +1077,10 @@ h2 {
     justify-content: center;
   }
   .travelers .sectionContainer .travelersContainer {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 3rem 0;
+  }
+  .products .sectionContainer .productsContainer {
     grid-template-columns: repeat(4, 1fr);
     margin: 3rem 0;
   }

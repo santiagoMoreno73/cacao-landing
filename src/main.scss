@@ -29,6 +29,10 @@
     --transition: .4s ease-in-out;
 }
 
+// Mixins
+@mixin diagBg($color) {
+    background: linear-gradient(-45deg, $color 50%, rgba(255, 255, 255, 0.5) 50%);
+}
 
 // default styling 
 body {
@@ -36,6 +40,7 @@ body {
 }
 
 a {
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -95,6 +100,45 @@ li {
 
     &:hover {
         background: var(--HoverColor);
+    }
+}
+
+.table {
+    width: 100%;
+	border: 1px solid var(--borderColor);
+    border-radius: 12px;
+
+    .tableHead {
+	    width: 100%;
+        height: 15px;
+        background: var(--greyBg);
+	    padding:(12px * 1.5) 0;
+
+        th {
+            height: 40px;
+        }
+    }
+
+    .tableRow {
+        display:flex;
+	    width:100%;
+	    padding:(12px * 1.5) 0;
+	
+	    &:nth-of-type(odd) {
+		    background: var(--greyBg);
+	    }
+    }
+
+    .img {
+        margin: 2px;
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .divQuantity {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 }
 
@@ -165,6 +209,10 @@ h2 {
         }
     }
 
+    .divSaleSuccess {
+        margin: 20px 0px;
+    }
+
     .btnClose {
         position: absolute;
         top: 20px;
@@ -217,6 +265,102 @@ h2 {
     }
 }
 
+// checkout
+.checkout {
+    .titleDiv {
+        padding-top: 5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        justify-content: space-between;
+    }
+
+    .sectionContainer {
+        text-align: center;
+
+        .checkoutContainer {
+            text-align: center;
+            margin-top: 3rem;
+
+            .divNoItems {
+               display: flex;
+            }
+            
+            .divAmount {
+                margin: 20px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+
+                h3 {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+// products page
+.products {
+    .titleDiv {
+        padding-top: 5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        justify-content: space-between;
+    }
+
+    .sectionContainer {
+        text-align: center;
+
+        .productsContainer {
+            text-align: center;
+            gap: 1.5rem;
+
+            .divNoItems {
+               display: flex;
+            }
+            
+            .productCard {
+                box-shadow: 1px 5px 15px #CCC;
+                width: 15rem;
+                height: auto;
+                border-radius: 3px;
+                padding: 2rem;
+                margin: 1rem;
+                overflow: hidden;
+                position: relative;
+                flex: auto;
+                @include diagBg(var(--PrimaryColor));
+
+                .img {
+                    max-width: 100%;
+                    height: 80%;
+                    text-align: center;
+                    border-radius: 12px;
+                    object-fit: cover;
+                }
+
+                p {
+                    font-size: 12px;
+                    margin-bottom: 2px;
+                }
+                    
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    &:hover {
+                        background: var(--whiteColor);
+                        color: var(--blackColor);
+                    }
+                }
+            } 
+        }
+    }
+}
+
 // logion section
 .login {
     margin: 20px;
@@ -252,6 +396,65 @@ h2 {
     flex-direction: column;
     width: 100%;
     z-index: 1000;
+
+    .divShopping {
+        position: relative;
+        display: flex;
+        width: 3rem;
+        height: auto;
+    
+        .btn-shopping {
+            width: 3rem;
+            padding: 4px;
+            background: var(--greyBg);
+            border: none;
+            outline: none;
+            border-radius: 3rem;
+            display: flex;
+            justify-content: space-around;
+        
+            .icon {
+                color: var(--blackColor);
+            }
+        }
+    
+        .numItems {
+            position: absolute;
+            right: 0;
+            top: -6px;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 40%;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--colorError);
+            color: var(--whiteColor);
+        }
+    }
+
+    .avatarContainer {
+        width: auto;
+        height: 2rem;
+        background: var(--whiteColor);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 12px;
+
+        .avatarImg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--greyBg);
+            border-radius: 50%;
+            width: 1.8rem;
+            height: 1.8rem;
+            margin-right: 4px;
+        }
+    }
 
     .navBarOne, .navBarTwo {
         justify-content: space-between;
@@ -805,7 +1008,7 @@ h2 {
                     border: 1px solid var(--borderColor);
                     box-shadow: var(--boxShadow);
                     padding: .4rem;
-                    color: var(--greyText);
+                    color: var(--blackColor);
 
                     &:hover {
                         background: var(--PrimaryColor);
@@ -1217,6 +1420,16 @@ h2 {
     .travelers {
         .sectionContainer {
             .travelersContainer {
+                grid-template-columns: repeat(4, 1fr);
+                margin: 3rem 0;
+            }
+        }
+    }
+
+    // products section styling
+    .products {
+        .sectionContainer {
+            .productsContainer {
                 grid-template-columns: repeat(4, 1fr);
                 margin: 3rem 0;
             }

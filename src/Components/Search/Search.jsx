@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 // icons
 import { BiSolidCoffeeBean } from "react-icons/bi";
@@ -7,7 +8,7 @@ import { BiSolidCoffeeBean } from "react-icons/bi";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const Search = () => {
+const Search = ({ onChangeSearch }) => {
   // useEffect to set animation duration
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -31,16 +32,26 @@ const Search = () => {
               <BiSolidCoffeeBean className="icon" />
             </div>
             <div className="texts">
-              <h4>Coffee</h4>
-              <input type="text" placeholder="coffee search" />
+              <h4>Café</h4>
+              <input
+                id="coffe"
+                name="coffe"
+                type="text"
+                onChange={onChangeSearch}
+                placeholder="Buscar"
+              />
             </div>
           </div>
 
-          <button className="btn btnBlock flex">Search Coffee</button>
+          <button className="btn btnBlock flex">Buscar</button>
         </div>
       </div>
     </div>
   );
+};
+
+Search.propTypes = {
+  onChangeSearch: PropTypes.func,
 };
 
 export default Search;

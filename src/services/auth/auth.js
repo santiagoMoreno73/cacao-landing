@@ -7,3 +7,7 @@ export const createUser = (data) => {
 export const getUserById = (id) => {
   return axiosInstance.get(`users/${id}`);
 };
+
+export const login = (data) => {
+  return axiosInstance.post(`auth/login`, data);
+};

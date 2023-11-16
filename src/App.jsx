@@ -8,11 +8,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <Provider store={store}>
       <Navbar />
+      <ToastContainer position="bottom-left" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

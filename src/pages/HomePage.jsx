@@ -1,5 +1,5 @@
 import Home from "./../Components/Home/Home";
-import Search from "./../Components/Search/Search";
+// import Search from "./../Components/Search/Search";
 import Support from "./../Components/Support/Support";
 import Travelers from "./../Components/Travelers/Travelers";
 import Info from "./../Components/Info/Info";
@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div>
       <Home />
-      <Search />
+      {/* <Search /> */}
       <Support />
       <Info />
       <Lounge />

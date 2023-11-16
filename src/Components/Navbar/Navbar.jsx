@@ -17,10 +17,10 @@ import { useSelector } from "react-redux";
 
 const optionsNav = [
   { title: "Inicio", path: "/" },
-  { title: "Acerca de", path: "#support" },
-  { title: "Info", path: "#info" },
-  { title: "Lounge", path: "#lounge" },
-  { title: "Suscríbete", path: "#subscribers" },
+  { title: "Acerca de", path: "/#support" },
+  { title: "Info", path: "/#info" },
+  { title: "Lounge", path: "/#lounge" },
+  { title: "Suscríbete", path: "/#subscribers" },
   { title: "Productos", path: "/products" },
 ];
 
@@ -36,6 +36,10 @@ const Navbar = () => {
 
   const showNavBar = () => {
     setActive("navBarMenu showNavBar");
+  };
+
+  const removeNavBar = () => {
+    setActive("navBarMenu");
   };
 
   const addBgColor = () => {
@@ -108,7 +112,11 @@ const Navbar = () => {
             {optionsNav.map((item, index) => {
               return (
                 <li key={index}>
-                  <a className="listItem" href={item.path}>
+                  <a
+                    className="listItem"
+                    href={item.path}
+                    onClick={removeNavBar}
+                  >
                     {item.title}
                   </a>
                 </li>

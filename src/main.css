@@ -74,6 +74,7 @@ li {
 .grid {
   display: grid;
   align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -266,17 +267,14 @@ h2 {
   gap: 1.5rem;
   justify-content: space-between;
 }
-.products .sectionContainer {
-  text-align: center;
-}
 .products .sectionContainer .productsContainer {
-  text-align: center;
   gap: 1.5rem;
 }
 .products .sectionContainer .productsContainer .divNoItems {
   display: flex;
 }
 .products .sectionContainer .productsContainer .productCard {
+  text-align: center;
   box-shadow: 1px 5px 15px #CCC;
   width: 15rem;
   height: auto;
@@ -290,7 +288,7 @@ h2 {
 }
 .products .sectionContainer .productsContainer .productCard .img {
   max-width: 100%;
-  height: 80%;
+  height: 12rem;
   text-align: center;
   border-radius: 12px;
   -o-object-fit: cover;

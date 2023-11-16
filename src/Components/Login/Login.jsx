@@ -1,8 +1,12 @@
 import { useState } from "react";
-import Register from "../Register/Register";
+// services
 import { login } from "../../services/auth/auth";
+// redux
 import { useDispatch } from "react-redux";
 import { addToken, addUser } from "../../redux/userSlice";
+// components
+import Register from "../Register/Register";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -79,6 +83,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log("error", error);
+        toast.error("Error, no es posible iniciar sesion");
       });
   };
 

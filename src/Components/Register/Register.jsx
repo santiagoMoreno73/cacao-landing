@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+//  misc
 import { emailRegexp } from "../../misc/misc";
+// services
 import { createUser } from "../../services/auth/auth";
+// toast
+import { toast } from "react-toastify";
 
 const Register = ({ handleRegister }) => {
   const [formState, setFormState] = useState({
@@ -122,11 +126,15 @@ const Register = ({ handleRegister }) => {
     const values = formState.values;
 
     createUser(values)
-      .then(({ data }) => {
-        console.log("user", data);
+      .then(() => {
+        toast.success("Usuario registrado correctamente");
+        setTimeout(() => {
+          handleRegister();
+        }, 2000);
       })
       .catch((error) => {
         console.log("error", error);
+        toast.error("El usuario no fue registrado correctamente");
       });
   };
 

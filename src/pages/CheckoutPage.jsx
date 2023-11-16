@@ -1,12 +1,16 @@
+import { useState } from "react";
+// redux
 import { useDispatch, useSelector } from "react-redux";
-
+import { addItem, deleteItem, removeItem, removeAll } from "../redux/cartSlice";
+// icons
 import { IoMdAdd } from "react-icons/io";
 import { IoRemove } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
+// service
 import { createSale } from "../services/sales/sales";
-import { useState } from "react";
+// components
 import Modal from "../Components/Modal/Modal";
-import { addItem, deleteItem, removeItem, removeAll } from "../redux/cartSlice";
+import { toast } from "react-toastify";
 
 const CheckoutPage = () => {
   const dispatch = useDispatch();
@@ -17,6 +21,11 @@ const CheckoutPage = () => {
 
   const handlePay = () => {
     const sales = [];
+
+    if (!Object.keys(user).length) {
+      toast.error(`Es necesario iniciar sesion para comprar`);
+      return;
+    }
 
     for (let item of cartItems) {
       const sale = {
@@ -118,9 +127,11 @@ const CheckoutPage = () => {
             {!cartItems.length ? (
               <></>
             ) : (
-              <button className="btn" onClick={handlePay}>
-                Pagar
-              </button>
+              <>
+                <button className="btn" onClick={handlePay}>
+                  Pagar
+                </button>
+              </>
             )}
           </div>
         </div>

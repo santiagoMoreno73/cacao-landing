@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="socialIcon flex">
             {socialNetworks.map(({ path, icon }, index) => {
               return (
-                <a key={index} href={path}>
+                <a key={index} href={path} target="_blank" rel="noreferrer">
                   {icon}
                 </a>
               );
@@ -128,7 +128,7 @@ const Footer = () => {
         <p>
           Courtesy Design | Developed by{" "}
           <a href="#" target="_blank">
-            Santiago
+            S_costa
           </a>
         </p>
       </div>
